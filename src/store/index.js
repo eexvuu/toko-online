@@ -1,9 +1,10 @@
-import React from 'react'
+import { configureStore } from "@reduxjs/toolkit";
+import cartItems from "./slicers/cart";
+import products from "./slicers/products";
 
-function index() {
-  return (
-    <div>index</div>
-  )
-}
-
-export default index
+export const store = configureStore({
+  reducer: {
+    products,
+    cartItems,
+  },
+});

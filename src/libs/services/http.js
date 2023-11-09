@@ -1,9 +1,26 @@
-import React from 'react'
+import axios from 'axios';
 
-function https() {
-  return (
-    <div>https</div>
-  )
+const baseUrl = process.env.REACT_APP_BASE_API_URL;
+
+const parseResponse = (response) => {
+  return {
+    isError: response.status !== 200,
+    data: response.data
+  }
 }
 
-export default https
+export const http = (method, url = '', data) => new Promise((resolve) => {
+  axios({
+    method,
+    url: `https://fakestoreapi.com/${url}`,
+    data,
+  })
+    .then((response) => {
+      resolve(parseResponse(response));
+    })
+    .catch((e) => {
+      resolve({
+        isError:true
+      })
+    });
+});
