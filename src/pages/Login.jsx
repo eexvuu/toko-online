@@ -4,11 +4,20 @@ import { Button, useToast } from "@chakra-ui/react";
 import LogoCart from "../assets/images/Cart.svg";
 import { http } from "../libs/services/http";
 import { useNavigate } from "react-router-dom";
+import { isAuthenticated } from "../libs/helpers/auth";
+import { useEffect } from "react";
 
 const method = "post";
 const url = "auth/login";
 
 const Login = () => {
+  useEffect(() => {
+    const testAuth = async () => {
+      if (isAuthenticated()) window.location.href = "/";
+    };
+    testAuth();
+  }, []);
+
   const toast = useToast();
   const navigate = useNavigate();
 

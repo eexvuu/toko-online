@@ -20,7 +20,7 @@ const EditStock = () => {
     toast({
       title: "Update stock item success",
       status: "success",
-      duration: 6000,
+      duration: 3000,
       position: "top",
       isClosable: true,
     });
@@ -29,8 +29,9 @@ const EditStock = () => {
   useEffect(() => {
     if (!(isAuthenticated() && isAdmin())) window.location.href = "/login";
   }, []);
+
   return (
-<div className="w-full p-2 md:p-12 space-y-8 md:space-y-16">
+    <div className="w-full p-2 md:p-12 space-y-8 md:space-y-16">
       <div className="flex flex-col items-center justify-between">
         <div className="grid grid-cols-4 md:grid-cols-5 gap-2 items-center w-full border p-5 border-gray-500 overflow-x-auto">
           <div className="hidden md:block">
@@ -99,4 +100,4 @@ const EditStock = () => {
   );
 };
 
-export default EditStock
+export default EditStock;

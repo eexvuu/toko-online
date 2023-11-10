@@ -61,7 +61,7 @@ const DetailProduct = () => {
       toast({
         title: "Success add this product.",
         status: "success",
-        duration: 6000,
+        duration: 3000,
         position: "top",
         isClosable: true,
       });
@@ -76,10 +76,10 @@ const DetailProduct = () => {
         (item) => item.id === parseInt(params.id)
       );
       setProduct(detailProduct);
-      console.log("BRUHHH", detailProduct);
     };
     testProduct();
   }, [count, params.id]);
+
   return (
     <div className="w-full p-2 md:p-8 lg:p-8 xl:p-8 space-y-8 md:space-y-16 lg:space-y-16 xl:space-y-16 max-w-full">
       {product && (
