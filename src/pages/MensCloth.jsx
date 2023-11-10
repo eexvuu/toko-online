@@ -61,10 +61,11 @@ const MensCloth = () => {
         Men's Cloth Products
       </h1>
       <Slider {...settings}>
-        {products.map((product) => {
+        {products.map((product, idx) => {
           return (
-            <div>
+            <div key={idx}>
               <CardProduct
+                key={product.id}
                 id={product.id}
                 category={product.category}
                 image={product.image}

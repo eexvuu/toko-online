@@ -61,16 +61,17 @@ const Electronics = () => {
         Electronics Products
       </h1>
       <Slider {...settings}>
-        {products.map((product) => {
+        {products.map((product, idx) => {
           return (
-            <div>
+            <div key={idx}>
               <CardProduct
-                id={product.id}
+                key={product.id}
                 category={product.category}
                 image={product.image}
                 title={product.title}
                 price={product.price}
                 rating={product.rating}
+                id={product.id}
                 stock={product.stock}
                 handleClick={handleClick}
               />
