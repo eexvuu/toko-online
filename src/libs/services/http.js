@@ -20,7 +20,7 @@ export const http = (method, url = '', data) => new Promise((resolve) => {
     })
     .catch((e) => {
       resolve({
-        isError:true
+        isError: true
       })
     });
 });

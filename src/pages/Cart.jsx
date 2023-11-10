@@ -1,6 +1,7 @@
 import { Box, Button, useToast, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 import CartProduct from "../components/CardProduct";
 import {
   ADD_COUNT_ITEM,
@@ -13,6 +14,7 @@ import { UPDATE_ITEM_STOCK } from "../store/slicers/products";
 import { isAuthenticated } from "../libs/helpers/auth";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const products = useSelector((state) => state.cartItems.cartItems);
   const allProducts = useSelector((state) =>
     state.products.products.length > 0
@@ -73,6 +75,7 @@ const Cart = () => {
       position: "top",
       isClosable: true,
     });
+    navigate(`/`);
   };
 
   useEffect(() => {
