@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { Icon, Button } from "@chakra-ui/react";
 import { CgProfile } from "react-icons/cg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { SiShopify } from "react-icons/si";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgClose } from "react-icons/cg";
 import { useSelector } from "react-redux";
@@ -29,9 +28,6 @@ const Header = ({
   );
   return (
     <div className="w-full py-6 flex items-center flex-row justify-between px-3 md:px-12 space-x-3">
-      <div className="block md:hidden">
-        <Icon as={SiShopify} w="35px" h="35px" color="black.400" />
-      </div>
       <div className="w-52 md:w-80 lg:w-80">
         <InputGroup>
           <Input
@@ -105,10 +101,10 @@ const Header = ({
             className="space-x-3 md:space-x-5 items-center"
           >
             <Button
-              colorScheme="black"
-              variant="outline"
+              bg={"blue.100"}
               children="Login"
               onClick={handleClickBtnLogin}
+              className="shadow-lg"
             />
             <div className="block md:hidden">
               <Icon
