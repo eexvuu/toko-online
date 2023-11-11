@@ -1,11 +1,8 @@
-import { Button, Input, useToast } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { isAdmin, isAuthenticated } from "../libs/helpers/auth";
-import { UPDATE_ITEM_STOCK } from "../store/slicers/products";
 
 const Report = () => {
-  const dispatch = useDispatch();
   const [orders, setOrders] = useState([]);
   const [totalEarning, setTotalEarning] = useState(0);
   const allOrders = useSelector((state) =>

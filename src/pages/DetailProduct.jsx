@@ -7,7 +7,7 @@ import OtherProducts from "../components/OtherProducts";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_CART_ITEMS, ADD_COUNT_ITEM } from "../store/slicers/cart";
-import { isAuthenticated } from "../libs/helpers/auth";
+import { isAdmin, isAuthenticated } from "../libs/helpers/auth";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { UPDATE_ITEM_STOCK } from "../store/slicers/products";
@@ -78,6 +78,10 @@ const DetailProduct = () => {
       setProduct(detailProduct);
     };
     testProduct();
+
+    if (isAdmin()) {
+      window.location.href = "/report";
+    }
   }, [count, params.id]);
 
   return (
@@ -155,11 +159,12 @@ const DetailProduct = () => {
               variant="solid"
               mt="5"
               w="full"
-              disabled={count === 0}
+              isDisabled={count === 0}
               onClick={handleAddToCart}
             >
-              <Icon as={AiOutlineShoppingCart} w="20px" h="20px" mx="5" />
-              Add to Cart
+              
+              
+              {product.stock === 0 ? "Out of stock" : (<><Icon as={AiOutlineShoppingCart} w="20px" h="20px" mx="5" />Add to cart</>)}
             </Button>
           </Box>
         </div>

@@ -5,6 +5,7 @@ import { http } from "../libs/services/http";
 import { useDispatch } from "react-redux";
 import { ADD_ALL_PRODUCTS } from "../store/slicers/products";
 import useProducts from "../hooks/products";
+import { isAdmin } from "../libs/helpers/auth";
 
 const URL = "products";
 const GET = "get";
@@ -39,8 +40,11 @@ const Home = () => {
 
   useEffect(() => {
     fetchData();
+    if (isAdmin()) {
+      window.location.href = "/report";
+    }
   }, []);
-  return(
+  return (
     <div className="w-full p-4 md:p-4 space-y-8 md:space-y-16">
       <div className="space-y-5">
         {categories.map((category) => (

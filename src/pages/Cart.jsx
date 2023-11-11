@@ -2,7 +2,6 @@ import { Box, Button, useToast, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import CartProduct from "../components/CardProduct";
 import {
   ADD_COUNT_ITEM,
   REMOVE_CART_ITEMS,
@@ -11,7 +10,9 @@ import {
 } from "../store/slicers/cart";
 import { ADD_ORDER_ITEMS } from "../store/slicers/orders";
 import { UPDATE_ITEM_STOCK } from "../store/slicers/products";
-import { isAuthenticated } from "../libs/helpers/auth";
+import { isAdmin, isAuthenticated } from "../libs/helpers/auth";
+import CartProduct from "../components/CartProduct";
+
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -90,6 +91,10 @@ const Cart = () => {
         //
       }
     };
+
+    if (isAdmin()) {
+      window.location.href = "/report";
+    }
     testCart();
   }, []);
 
