@@ -45,7 +45,8 @@ const Home = () => {
     }
   }, []);
   return (
-    <div className="w-full p-4 md:p-4 space-y-8 md:space-y-16">
+    
+    <div className="w-full h-full bg-gray-200 p-4 md:p-4 md:h-full space-y-8 md:space-y-64">
       <div className="space-y-5">
         {categories.map((category) => (
           <PopularByCategory key={category} category={category} />

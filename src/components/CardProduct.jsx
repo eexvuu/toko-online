@@ -16,7 +16,7 @@ const CardProduct = ({
   return (
     <Box
       w="250px"
-      className="shadow-lg cursor-pointer text-gray-600"
+      className="shadow-lg bg-white cursor-pointer text-gray-600"
       overflow="hidden"
       onClick={() => handleClick(id)}
     >
@@ -44,16 +44,16 @@ const CardProduct = ({
         <div className="flex flex-row justify-between items-center">
           <Box fontSize="sm">$ {price}</Box>
 
-          <Box display="flex" alignItems="center">
+                    <Box display="flex" alignItems="center">
             {Array(5)
               .fill("")
               .map((_, i) => (
                 <StarIcon
                   key={i}
-                  color={i < rating.rate ? "purple.200" : "gray.300"}
+                  color={i < rating.rate ? "yellow.400" : "gray.300"}
                 />
               ))}
-            <Box as="span" ml="2" color="gray.600" fontSize="sm">
+            <Box as="span" ml="2" color="gray.400" fontSize="sm">
               {rating.count} reviews
             </Box>
           </Box>

@@ -31,7 +31,7 @@ const MensCloth = () => {
     filterProductsByCategory();
   }, []);
   return (
-    <div className="w-full p-4 md:p-4 space-y-8 md:space-y-16">
+    <div className="w-full h-screen p-4 md:p-4 md:h-screen space-y-8 md:space-y-16">
       <h1 className="text-xl font-semibold text-gray-600">
         Men's Cloth Products
       </h1>

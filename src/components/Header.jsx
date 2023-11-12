@@ -9,6 +9,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CgClose } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { isAuthenticated, isAdmin } from "../libs/helpers/auth";
+import Logo from "../assets/images/Logo.svg";
+import { Link } from "react-router-dom";
+
 
 const Header = ({
   handleToggleSidebar,
@@ -27,9 +30,11 @@ const Header = ({
       : JSON.parse(localStorage.getItem("cartItems"))
   );
   return (
-    <div className="w-full py-6 flex items-center flex-row justify-between px-3 md:px-12 space-x-3">
-      <div className="w-52 md:w-80 lg:w-80">
-        <InputGroup>
+    <div className="w-screen py-6 flex h-[100px] bg-white items-center justify-between px-3 md:px-12 space-x-3 shadow-md">
+    <Link to="/"><img src={Logo} alt="" width="160px" height="50px" className="hidden md:block"/></Link>
+    {!isAdmin() ? (
+      <div className="flex items-center w-52 md:w-[400px] lg:w-[500px]">
+        <InputGroup justifyContent="center">
           <Input
             borderRadius="10"
             onKeyDown={(e) => handleKeydown(e.key)}
@@ -38,6 +43,8 @@ const Header = ({
             type="text"
             placeholder="Search Product"
             borderColor="black.400"
+            width="100%"
+            mx="auto"
           />
           <InputRightElement
             pointerEvents="none"
@@ -45,6 +52,7 @@ const Header = ({
           />
         </InputGroup>
       </div>
+    ) : null}
       <div className="space-x-8">
         {isAuthenticated() ? (
           <Stack direction="row" className="space-x-2 md:space-x-5 relative">
@@ -72,7 +80,7 @@ const Header = ({
               w="27px"
               h="27px"
               color="black.400"
-              className="cursor-pointer z-50"
+              className="cursor-pointer z-50 "
               onClick={() => setIsShowLogout(!isShowLogout)}
             />
             {isShowLogout && (
@@ -98,13 +106,13 @@ const Header = ({
         ) : (
           <Stack
             direction="row"
-            className="space-x-3 md:space-x-5 items-center"
+            className="space-x-3 md:space-x-5 items-center ml-auto"
           >
             <Button
-              bg={"blue.100"}
+              bg={"blue.300"}
               children="Login"
               onClick={handleClickBtnLogin}
-              className="shadow-lg"
+              className="shadow-lg "
             />
             <div className="block md:hidden">
               <Icon

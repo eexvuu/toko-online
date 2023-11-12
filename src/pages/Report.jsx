@@ -39,7 +39,7 @@ const Report = () => {
     testReport();
   }, []);
   return (
-    <div className="w-full p-2 md:p-12 space-y-8 md:space-y-16">
+    <div className="w-full h-screen p-2 md:p-12 space-y-8 md:space-y-16">
       {orders && orders.length > 0 ? (
         <div className="flex flex-col items-center justify-between">
           <div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box } from "@chakra-ui/layout";
 import { Button, useToast } from "@chakra-ui/react";
-import LogoCart from "../assets/images/Cart.svg";
+import LogoCart from "../assets/images/1.svg";
 import { http } from "../libs/services/http";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../libs/helpers/auth";
@@ -61,13 +61,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex px-5 pb-5 md:p-0 md:flex-row md:space-x-10 items-center justify-center">
-      <div className="bg-white p-5 lg:p-10 rounded-md shadow-lg w-full md:w-6/12 lg:w-5/12 xl:w-4/12">
+    <div className="min-h-screen flex px-5 pb-5 md:p-0 md:flex-row md:space-x-10 justify-center">
+      <div className="p-5 lg:p-10 mt-10 bg-white rounded-md shadow-lg w-full md:w-6/12 lg:w-5/12 xl:w-4/12">
         <a href="/">
           <Box className="justify-center text-2xl mb-10 flex space-x-3 items-center">
-            <img src={LogoCart} width="150px" alt="LogoCart" />
+            <img src={LogoCart} width="400px" alt="LogoCart" />
           </Box>
-          <p className="text-center text-2xl text-gray-600">RCTN-STORE</p>
+          <p className="text-center text-2xl text-gray-600">LOGIN</p>
         </a>
 
         <form className="space-y-5 w-full" onSubmit={handleSubmit}>
@@ -97,7 +97,7 @@ const Login = () => {
           <Button
             isLoading={loading}
             type="submit"
-            backgroundColor="#C6CFFF"
+            backgroundColor="blue.300"
             style={{ width: "100%" }}
           >
             Sign In

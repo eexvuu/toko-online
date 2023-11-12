@@ -85,9 +85,9 @@ const DetailProduct = () => {
   }, [count, params.id]);
 
   return (
-    <div className="w-full p-2 md:p-8 lg:p-8 xl:p-8 space-y-8 md:space-y-16 lg:space-y-16 xl:space-y-16 max-w-full">
+    <div className="w-full h-full bg-gray-200 p-2 md:p-8 lg:p-8 xl:p-8 space-y-8 md:space-y-16 lg:space-y-16 xl:space-y-16 max-w-full">
       {product && (
-        <div className="flex flex-col md:flex-row items-center md:items-start space-y-5 md:space-y-0 lg:space-y-0 xl:space-y-0 md:space-x-10 lg:space-x-10 xl:space-x-10 justify-center">
+        <div className="flex p-10 bg-white flex-col md:flex-row items-center md:items-start space-y-5 md:space-y-0 lg:space-y-0 xl:space-y-0 md:space-x-10 lg:space-x-10 xl:space-x-10 justify-center">
           <Box maxW="xs">
             <Image
               src={product.image}
@@ -106,7 +106,7 @@ const DetailProduct = () => {
                     <StarIcon
                       key={i}
                       color={
-                        i < product.rating.rate ? "purple.200" : "gray.300"
+                        i < product.rating.rate ? "yellow.400" : "gray.300"
                       }
                     />
                   ))}
@@ -137,24 +137,26 @@ const DetailProduct = () => {
             >
               <Button
                 isDisabled={count === 0}
-                bg="red.100"
+                bg=""
                 className="shadow-lg"
                 onClick={handleSubtract}
+                border="1px solid gray"
               >
                 <HiOutlineMinus />
               </Button>
               <p className="text-xl font-bold">{count}</p>
               <Button
                 isDisabled={product.stock - count === 0}
-                bg="purple.100"
+                bg=" "
                 className="shadow-lg"
                 onClick={handleAdd}
+                border="1px solid gray"
               >
                 <HiPlus />
               </Button>
             </Stack>
             <Button
-              bg="purple.100"
+              bg="blue.300"
               className="shadow-lg"
               variant="solid"
               mt="5"
