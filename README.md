@@ -43,9 +43,9 @@ Pass     : admin123
 
 ## Developed by
 
-1. Muhammad Farhan - RCTN-KS06-016
-2. Usamah Abdul Matin - RCTN-KS06-02
-3. Mayendra - RCTN-KS06-023
+1. Muhammad Farhan - RCTN-KS08-016
+2. Usamah Abdul Matin - RCTN-KS08-02
+3. Mayendra - RCTN-KS08-023
 
 ## Kelas
 
