@@ -4,32 +4,7 @@ import Slider from "react-slick";
 import "../assets/css/modules/reactSlick.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-const settings = {
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  autoplay: true,
-  arrows: false,
-  variableWidth: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 640,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
+import { settings } from "../libs/helpers/sliderSettings";
 const PopularByCategory = ({ category }) => {
   const [products, setproducts] = useState([]);
   const allProducts = useSelector((state) => state.products.products);

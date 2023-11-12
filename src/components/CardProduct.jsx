@@ -16,7 +16,7 @@ const CardProduct = ({
   return (
     <Box
       w="250px"
-      className="shadow-lg bg-white cursor-pointer text-gray-600"
+      className="shadow-lg bg-white cursor-pointer text-gray-600 py-4"
       overflow="hidden"
       onClick={() => handleClick(id)}
     >

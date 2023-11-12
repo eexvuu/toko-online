@@ -30,7 +30,7 @@ const Header = ({
       : JSON.parse(localStorage.getItem("cartItems"))
   );
   return (
-    <div className="w-screen py-6 flex h-[100px] bg-white items-center justify-between px-3 md:px-12 space-x-3 shadow-md">
+    <div className=" py-6 flex h-[100px] bg-white items-center justify-between px-3 md:px-12 space-x-3 shadow-md">
     <Link to="/"><img src={Logo} alt="" width="160px" height="50px" className="hidden md:block"/></Link>
     {!isAdmin() ? (
       <div className="flex items-center w-52 md:w-[400px] lg:w-[500px]">
