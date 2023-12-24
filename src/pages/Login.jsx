@@ -61,14 +61,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex px-5 pb-5 md:p-0 md:flex-row md:space-x-10 justify-center">
+    <div className="flex px-5 pb-5 md:p-0 md:flex-row md:space-x-10 justify-center ">
       <div className="p-5 lg:p-10 mt-10 bg-white rounded-md shadow-lg w-full md:w-6/12 lg:w-5/12 xl:w-4/12">
-        <a href="/">
-          <Box className="justify-center text-2xl mb-10 flex space-x-3 items-center">
-            <img src={LogoCart} width="400px" alt="LogoCart" />
-          </Box>
-          <p className="text-center text-2xl text-gray-600">LOGIN</p>
-        </a>
+        <p className="text-center text-2xl text-gray-600">LOGIN</p>
 
         <form className="space-y-5 w-full" onSubmit={handleSubmit}>
           <div>

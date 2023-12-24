@@ -61,17 +61,17 @@ const Sidebar = ({ isOpen }) => {
 
   return (
     <div
-    className={`w-72 h-full p-6 text-gray-600 ${ isOpen 
+    className={`w-72 min-h-screen p-6 text-gray-600 ${ isOpen 
       ? "block bg-blue-300 md:bg-blue-300 z-50 lg:bg-blue-300 md:z-50 h-screen md:h-auto fixed md:relative top-0 md:top-auto shadow-lg" 
       : "hidden" 
     } md:block sm:bg-blue-300 sm:h-auto`}
     >
       <Stack direction={"column"} spacing="35px">
         <Box
-            className="text-2xl mb-10 flex-row space-x-3 items-center cursor-pointer block md:hidden"
+            className="text-2xl mb-10 flex-row space-x-3 items-center cursor-pointer block md:hidden "
             onClick={() => navigate("/")}
           >
-            <img src={Logo} alt="" width="120px" />
+            <h1 className="text-xl font-semibold text-white mt-4">MyStore</h1>
           </Box>
         {menus.map((menu, idx) => {
           return (
